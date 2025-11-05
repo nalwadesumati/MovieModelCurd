@@ -108,6 +108,9 @@ const onMovieAdd = (eve) => {
     onModelToggle();
 
     Swal.fire("Added!", "New Movie added successfully!", "success");
+
+    addMovieBtn.classList.remove("d-none");
+    updateMovieBtn.classList.add("d-none");
 };
 
 // ==== REMOVE MOVIE ====
@@ -203,8 +206,8 @@ const onMovieUpdate = () => {
 
 
     movieForm.reset();
-    addMovieBtn.classList.remove("d-none");
-    updateMovieBtn.classList.add("d-none");
+    addMovieBtn.classList.add("d-none");
+    updateMovieBtn.classList.remove("d-none");
 
 
     Swal.fire({
@@ -214,6 +217,11 @@ const onMovieUpdate = () => {
         timer: 2000,
         confirmButtonColor: "#212529",
     });
+
+    movieForm.reset();
+    addMovieBtn.classList.remove("d-none");
+    updateMovieBtn.classList.add("d-none");
+    onModelToggle();
 
 }
 
@@ -231,5 +239,3 @@ showModelbtn.addEventListener("click", onModelToggle);
 
 movieForm.addEventListener("submit", onMovieAdd);
 updateMovieBtn.addEventListener("click", onMovieUpdate);
-
-
