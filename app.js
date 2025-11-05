@@ -148,8 +148,8 @@ const onEdit = (ele) => {
     movieRatingControl.value = EDIT_OBJ.rating;
 
     onModelToggle();
-    addMovieBtn.classList.add("d-none");
-    updateMovieBtn.classList.remove("d-none");
+    addMovieBtn.classList.remove("d-none");
+    updateMovieBtn.classList.add("d-none");
 };
 
 // ==== UPDATE MOVIE ====
@@ -231,3 +231,4 @@ showModelbtn.addEventListener("click", onModelToggle);
 
 movieForm.addEventListener("submit", onMovieAdd);
 updateMovieBtn.addEventListener("click", onMovieUpdate);
+
